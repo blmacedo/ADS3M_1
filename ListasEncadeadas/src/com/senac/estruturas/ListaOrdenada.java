@@ -1,4 +1,5 @@
 package com.senac.estruturas;
+import static java.lang.System.out;
 
 public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 
@@ -46,18 +47,29 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 	}
 	
 	
-	public static void main(String[] args) {
-		ListaOrdenada<String> lista = new ListaOrdenada<String>();
+//	public static void main(String[] args) {
+		//ListaOrdenada<String> lista = new ListaOrdenada<String>();
+		//ListaOrdenada<Object> lista1 = new ListaOrdenada<Object>();
+	//	Contato b = new Contato("teste", "123 456 789 101");
+	//	Contato c = new Contato("amaral", "123 456 789 101");
+	//	Contato d = new Contato("bruno", "123 456 789 101");
+		//Contato d = new Contato("bruno", "123 456 789 101");
 		
-		lista.insert(new Nodo<String>("Rafael", "123456"));
-		lista.insert(new Nodo<String>("Tiago", "123456"), lista.getHead());
-		lista.append(new Nodo<String>("Mauro", "123456"));
-		lista.insert(new Nodo<String>("Carlos", "123456"));
-		lista.insert(new Nodo<String>("Raffael", "123456"));
-		lista.insert(new Nodo<String>("Rafael", "123456"));
-		lista.insert(new Nodo<String>("Raphael", "123456"));
+	//	lista.insert(new Nodo(b));
+	//	lista.insert(new Nodo(c));
+	//	lista.insert(new Nodo(d));
+		//out.println(b.getNome() + c.getNome());
+		//lista.insert(new Nodo(c.getNome()));
+		//lista.insert(new Nodo(d.getNome()));
+		//lista.insert(new Nodo("Tiago"), lista.getHead());
+	//	lista.append(new Nodo<String>("Mauro"));
+	//	lista.insert(new Nodo<String>("Carlos"));
+	//	lista.insert(new Nodo<String>("Raffael"));
+		//lista.insert(new Nodo<String>("Rafael"));
+	//	lista.insert(new Nodo<String>("Raphael"));
 		
-		lista.print();
+		//lista.print();
 	}
 
-}
+
+//}

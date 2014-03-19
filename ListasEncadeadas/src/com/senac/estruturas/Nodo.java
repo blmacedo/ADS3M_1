@@ -3,25 +3,21 @@ package com.senac.estruturas;
 public class Nodo<T extends Comparable<T>> implements Comparable<Nodo<T>> {
 
 	private T chave;
-	private T numero;
 	private Nodo<T> next;
 	
 	public Nodo()
 	{
 		this.chave = null;
-		this.numero = null;
 		this.next = null;
 	}
 	
-	public Nodo(T valor, T valor1)
+	public Nodo(T valor)
 	{
-		
 		this.chave = valor;
-		this.numero = valor1;
 		this.next = null;
 	}
 	
-	public T getData()
+	public  T getData()
 	{
 		return chave;
 	}
@@ -30,17 +26,6 @@ public class Nodo<T extends Comparable<T>> implements Comparable<Nodo<T>> {
  
 	{
 		this.chave = chave;
-	}
- 	
-	public T getNumero()
-	{
-		return numero;
-	}
-	
- 	private void setNumero(T numero)
- 
-	{
-		this.numero = numero;
 	}
 
 	
