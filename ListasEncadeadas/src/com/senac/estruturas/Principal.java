@@ -1,14 +1,14 @@
 package com.senac.estruturas;
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Principal {
 	public Scanner sc = new Scanner(System.in);
+	public int funcao=0;
 	private LerEscrever file;
 	ListaOrdenada<String> lista = new ListaOrdenada<String>();
-	ListaOrdenada<String> lista2 = new ListaOrdenada<String>();
+	//ListaOrdenada<String> lista2 = new ListaOrdenada<String>();
+	
 	
 	public void Ler() throws IOException{
 		String nome;
@@ -23,40 +23,14 @@ public class Principal {
 	
 	public void insereContatos(Contato c) throws IOException{
 		lista.insert(new Nodo(c));
-		file = new LerEscrever();
 		file.salvar(c);
 	}
-	public void recuperar(String arquivoSelecionado) throws IOException{
-		
-		BufferedReader in = new BufferedReader(new FileReader("C:/Users/Christian/Desktop\\Agenda.txt"));
-		String str;
-		
-		try {
-		while (in.ready()) {
-		str = in.readLine();
-		//process(str);
-		String f = str;
-		String [] s = f.split("     ");
-		//System.out.println(s[0] + s[1]);
-		Contato c = new Contato(s[0] , s[1]);
-		lista2.insert(new Nodo(c));
-		
-		//System.out.println(str);
-		}
-		in.close();
-} catch (IOException e) {
-
-}
-
-}	
-	
-	public static int funcao=0;
 	
 	public static void main(String[] args) throws Exception {		
 		(new Principal()).run(args);
 	} 
 	public void run(String[] args) throws Exception {
-		
+		file = new LerEscrever();
 		Boolean teste = true;
 		while(teste){
 			System.out.println("Agenda:\n");
@@ -79,8 +53,7 @@ public class Principal {
 				break;
 			case 4 :
 				System.out.println("Agenda:\n");
-				recuperar("C:/Users/Christian/Desktop\\Agenda.txt");
-				lista2.print();
+				file.recuperar();
 				break;
 			case 5 :
 				teste = false;

@@ -14,8 +14,8 @@ import java.nio.file.Paths;
 
 
 public class LerEscrever {
-	
-	String url = "C:/Users/Christian/Desktop\\Agenda.txt";
+	ListaOrdenada<String> lista2 = new ListaOrdenada<String>();
+	String url = "C:/Users/bruno/Desktop\\Agenda.txt";
 	Path path = Paths.get(url);
 
 	public Object salvar(Contato obj) throws IOException {
@@ -37,6 +37,27 @@ public class LerEscrever {
 
 		return file;
 	}
+	public void recuperar() throws IOException{
+		BufferedReader in = new BufferedReader(new FileReader("C:/Users/bruno/Desktop\\Agenda.txt"));
+		String str;
+		try {
+		while (in.ready()) {
+			
+		str = in.readLine();
+		//process(str);
+		String f = str;
+		String [] s = f.split("     ");
+		//System.out.println(s[0] + s[1]);
+		Contato c = new Contato(s[0] , s[1]);
+		lista2.insert(new Nodo(c), lista2.getHead());
+		}
+		in.close();
+		lista2.print();
+} catch (IOException e) {
+
+}
+
+}	
 
 
 }
