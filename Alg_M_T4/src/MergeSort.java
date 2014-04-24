@@ -1,5 +1,6 @@
 public class MergeSort {
-
+	int aux1 = 0 ;
+	int aux2 = 0 ;
 	private int[] array;
 	private int[] tempMergArr;
 	private int length;
@@ -7,7 +8,7 @@ public class MergeSort {
 
 	public static void main(String a[]) {
 
-		int[] inputArr = { 32, 27, 51, 89, 1, 98, 9, 28, 65, 0 };
+		int[] inputArr = { 3, 0, 2, 1,3, 0, 2, 1 };
 		MergeSort mms = new MergeSort();
 		mms.sort(inputArr);
 
@@ -25,6 +26,11 @@ public class MergeSort {
 		this.length = inputArr.length;
 		this.tempMergArr = new int[length];
 		doMergeSort(0, length - 1);
+		System.out.print("\n" + "\n" + "MergeSortPrint" + "\n");
+		System.out.print("nº de trocas:" + aux2 + "\n" +
+				"nº de Comparações:" + aux1  + "\n");
+		
+		
 
 	}
 
@@ -56,17 +62,20 @@ public class MergeSort {
 		int k = lowerIndex;
 
 		while (i <= middle && j <= higherIndex) {
+			aux1++;
 
 			if (tempMergArr[i] <= tempMergArr[j]) {
 
 				array[k] = tempMergArr[i];
 				i++;
+				
+				
 
 			} else {
 
 				array[k] = tempMergArr[j];
 				j++;
-
+				aux2++;
 			}
 
 			k++;
