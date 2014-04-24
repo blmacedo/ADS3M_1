@@ -4,21 +4,6 @@ public class MergeSort {
 	private int[] array;
 	private int[] tempMergArr;
 	private int length;
-	
-
-	public static void main(String a[]) {
-
-		int[] inputArr = { 3, 0, 2, 1,3, 0, 2, 1 };
-		MergeSort mms = new MergeSort();
-		mms.sort(inputArr);
-
-		for (int i : inputArr) {
-
-			System.out.print(i);
-			System.out.print(" ");
-
-		}
-	}
 
 	public void sort(int inputArr[]) {
 
@@ -39,11 +24,11 @@ public class MergeSort {
 		if (lowerIndex < higherIndex) {
 
 			int middle = lowerIndex + (higherIndex - lowerIndex) / 2;
-			// Below step sorts the left side of the array
+			
 			doMergeSort(lowerIndex, middle);
-			// Below step sorts the right side of the array
+
 			doMergeSort(middle + 1, higherIndex);
-			// Now merge both sides
+	
 			mergeParts(lowerIndex, middle, higherIndex);
 
 		}

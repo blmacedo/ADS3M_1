@@ -30,20 +30,6 @@ public class SelectionSort {
 						"nº de Comparações:" + aux2 + "\n");
 		return arr;
 	}
-
-	//public static void main(String a[]) {
-
-		//int[] arr1 = { 102, 34, 2, 56, 76, 5, 88, 42 };
-		//int[] arr2 = doSelectionSort(arr1);
-
-		//for (int i : arr2) {
-
-		//	System.out.print(i);
-		//	System.out.print(", ");
-
-		//}
-
-	//}
 }
 
 
